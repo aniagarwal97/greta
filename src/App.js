@@ -1,26 +1,38 @@
 import React from "react";
-import logo from "./logo.svg";
-import "./App.css";
+import { Container, Card, CardContent, Typography } from "@material-ui/core";
+import {
+  useFirebase,
+  useFirebaseConnect,
+  isLoaded,
+  isEmpty
+} from "react-redux-firebase";
+import { useSelector } from "react-redux";
 
-function App() {
+const App = () => {
+  // const firebase = useFirebase();
+  useFirebaseConnect(["2F18IbXgkejpKHOdUiMRpvLliMPIqnsBF3_gJH"]);
+  useSelector(state => {
+    console.log(state);
+  });
+
+  // console.log(isLoaded(users), isEmpty(users), users);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Container maxWidth="xs">
+      <Card>
+        <CardContent>
+          <Typography>
+            <a
+              href="https://material-ui.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Material UI Documentation
+            </a>
+          </Typography>
+        </CardContent>
+      </Card>
+    </Container>
   );
-}
-
+};
 export default App;
