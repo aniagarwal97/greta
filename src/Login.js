@@ -105,6 +105,19 @@ const Signup = () => {
             variant="contained"
             color="primary"
             className={classes.button}
+            onClick={async () => {
+              if (signup) {
+                const user = await firebase
+                  .auth()
+                  .createUserWithEmailAndPassword(email, password);
+                console.log(user);
+              } else {
+                const login = await firebase
+                  .auth()
+                  .signInWithEmailAndPassword(email, password);
+                console.log(login);
+              }
+            }}
           >
             {signup ? "Sign up" : "Login"}
           </Button>

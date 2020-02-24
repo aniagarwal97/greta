@@ -6,9 +6,13 @@ import { FirebaseDatabaseProvider } from "@react-firebase/database";
 import {
   FirebaseAuthProvider,
   FirebaseAuthConsumer,
+  IfFirebaseAuthed,
+  IfFirebaseUnAuthed,
 } from "@react-firebase/auth";
 import firebaseConfig from "./firebaseConfig";
 import firebase from "firebase/app";
+import Welcome from "./Welcome";
+import { CircularProgress } from "@material-ui/core";
 
 const App = () => (
   <FirebaseDatabaseProvider {...firebaseConfig} firebase={firebase}>
@@ -17,12 +21,28 @@ const App = () => (
         {props => <div>{console.log(props)}</div>}
       </FirebaseAuthConsumer>
       <BrowserRouter>
-        <Switch>
-          <Route path="/login">
-            <Login />
-          </Route>
-          <Redirect to="/login" />
-        </Switch>
+        <IfFirebaseAuthed>
+          <Switch>
+            <Route path="/">
+              <Welcome />
+            </Route>
+            <Redirect to="/" />
+          </Switch>
+        </IfFirebaseAuthed>
+        <IfFirebaseUnAuthed>
+          {({ providerId }) =>
+            providerId ? (
+              <Switch>
+                <Route path="/login">
+                  <Login />
+                </Route>
+                <Redirect to="/login" />
+              </Switch>
+            ) : (
+              <CircularProgress />
+            )
+          }
+        </IfFirebaseUnAuthed>
       </BrowserRouter>
     </FirebaseAuthProvider>
   </FirebaseDatabaseProvider>
