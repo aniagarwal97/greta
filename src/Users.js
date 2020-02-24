@@ -11,7 +11,7 @@ import { Link as RouterLink } from "react-router-dom";
 
 const Users = () => (
   <Container maxWidth="xs">
-    <FirebaseDatabaseNode path="18IbXgkejpKHOdUiMRpvLliMPIqnsBF3_gJH-AHH9ZA8/User">
+    <FirebaseDatabaseNode path="18IbXgkejpKHOdUiMRpvLliMPIqnsBF3_gJH-AHH9ZA8/challenges">
       {({ value: users }) =>
         users &&
         users.map(

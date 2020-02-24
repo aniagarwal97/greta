@@ -6,8 +6,6 @@ import { FirebaseDatabaseProvider } from "@react-firebase/database";
 import {
   FirebaseAuthProvider,
   FirebaseAuthConsumer,
-  IfFirebaseAuthed,
-  IfFirebaseUnAuthed,
 } from "@react-firebase/auth";
 import firebaseConfig from "./firebaseConfig";
 import firebase from "firebase/app";
@@ -18,32 +16,28 @@ const App = () => (
   <FirebaseDatabaseProvider {...firebaseConfig} firebase={firebase}>
     <FirebaseAuthProvider {...firebaseConfig} firebase={firebase}>
       <FirebaseAuthConsumer>
-        {props => <div>{console.log(props)}</div>}
-      </FirebaseAuthConsumer>
-      <BrowserRouter>
-        <IfFirebaseAuthed>
-          <Switch>
-            <Route path="/">
-              <Welcome />
-            </Route>
-            <Redirect to="/" />
-          </Switch>
-        </IfFirebaseAuthed>
-        <IfFirebaseUnAuthed>
-          {({ providerId }) =>
-            providerId ? (
+        {({ user, providerId }) =>
+          providerId ? (
+            <BrowserRouter>
               <Switch>
-                <Route path="/login">
-                  <Login />
-                </Route>
-                <Redirect to="/login" />
+                {user && (
+                  <Route path="/">
+                    <Welcome user={user} />
+                  </Route>
+                )}
+                {!user && (
+                  <Route path="/login">
+                    <Login />
+                  </Route>
+                )}
+                <Redirect to={user ? "/" : "/login"} />
               </Switch>
-            ) : (
-              <CircularProgress />
-            )
-          }
-        </IfFirebaseUnAuthed>
-      </BrowserRouter>
+            </BrowserRouter>
+          ) : (
+            <CircularProgress />
+          )
+        }
+      </FirebaseAuthConsumer>
     </FirebaseAuthProvider>
   </FirebaseDatabaseProvider>
 );
