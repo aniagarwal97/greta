@@ -10,7 +10,7 @@ import {
   Avatar,
   TextField,
 } from "@material-ui/core";
-// import { Link as RouterLink } from "react-router-dom";
+
 import { makeStyles } from "@material-ui/core/styles";
 import { useState } from "react";
 
@@ -107,15 +107,20 @@ const Signup = () => {
             className={classes.button}
             onClick={async () => {
               if (signup) {
-                const user = await firebase
+                const {
+                  user,
+                } = await firebase
                   .auth()
                   .createUserWithEmailAndPassword(email, password);
+                await firebase
+                  .database()
+                  .ref(`users/${user.uid}`)
+                  .set({ name, postcode });
                 console.log(user);
               } else {
-                const login = await firebase
+                await firebase
                   .auth()
                   .signInWithEmailAndPassword(email, password);
-                console.log(login);
               }
             }}
           >

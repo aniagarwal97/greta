@@ -1,16 +1,15 @@
 import React from "react";
 import {
   Container,
-  Card,
-  CardContent,
-  Typography,
-  Link,
+  // Card,
+  // CardContent,
+  // Typography,
+  // Link,
   Button,
 } from "@material-ui/core";
 import { FirebaseDatabaseNode } from "@react-firebase/database";
-import { Link as RouterLink } from "react-router-dom";
+// import { Link as RouterLink } from "react-router-dom";
 import firebase from "firebase/app";
-import { FirebaseAuthConsumer } from "@react-firebase/auth";
 
 const Welcome = props => (
   <FirebaseDatabaseNode path="18IbXgkejpKHOdUiMRpvLliMPIqnsBF3_gJH-AHH9ZA8/challenges">
