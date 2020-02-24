@@ -1,8 +1,8 @@
 import React from "react";
 import {
   Container,
-  // Card,
-  // CardContent,
+  Card,
+  CardContent,
   // Typography,
   // Link,
   Button,
@@ -12,14 +12,36 @@ import { FirebaseDatabaseNode } from "@react-firebase/database";
 import firebase from "firebase/app";
 
 const Welcome = props => (
-  <FirebaseDatabaseNode path="18IbXgkejpKHOdUiMRpvLliMPIqnsBF3_gJH-AHH9ZA8/challenges">
-    {({ value: challenges }) => (
+  <FirebaseDatabaseNode path={`users/${props.user.uid}`}>
+    {({ value: userInfo }) => (
       <Container maxWidth="xs">
-        {console.log(challenges, props)}
+        {console.log(props, userInfo)}
         <Button onClick={() => firebase.auth().signOut()}>Sign out</Button>
-        <div>User info</div>
+        <Card>
+          <CardContent>
+            <pre>
+              {JSON.stringify({ user: props.user, extra: userInfo }, null, 2)}
+            </pre>
+          </CardContent>
+        </Card>
         <div>Link to list of challenges</div>
-        <div>Challenge carousel</div>
+        <FirebaseDatabaseNode path="18IbXgkejpKHOdUiMRpvLliMPIqnsBF3_gJH-AHH9ZA8/challenges">
+          {({ value: challenges }) =>
+            challenges &&
+            challenges.map(
+              challenge =>
+                challenge &&
+                challenge.id && (
+                  <Card key={challenge.id}>
+                    {console.log(challenge)}
+                    <CardContent>
+                      <pre>{JSON.stringify(challenge, null, 2)}</pre>
+                    </CardContent>
+                  </Card>
+                )
+            )
+          }
+        </FirebaseDatabaseNode>
         <div>Daily challenge</div>
         <div>Total Points</div>
       </Container>
