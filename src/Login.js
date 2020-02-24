@@ -126,7 +126,7 @@ const Signup = () => {
           >
             {signup ? "Sign up" : "Login"}
           </Button>
-          <Button
+          {/* <Button
             fullWidth
             className={classes.button}
             variant="contained"
@@ -138,7 +138,7 @@ const Signup = () => {
             }
           >
             Sign in with Google
-          </Button>
+          </Button> */}
           <Grid container>
             <Grid item>
               <Link onClick={() => setSignup(!signup)}>
