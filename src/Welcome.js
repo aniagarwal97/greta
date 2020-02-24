@@ -8,7 +8,7 @@ import {
   Button,
 } from "@material-ui/core";
 import { FirebaseDatabaseNode } from "@react-firebase/database";
-// import { Link as RouterLink } from "react-router-dom";
+import { Link as RouterLink } from "react-router-dom";
 import firebase from "firebase/app";
 
 const Welcome = props => (
@@ -32,12 +32,14 @@ const Welcome = props => (
               challenge =>
                 challenge &&
                 challenge.id && (
-                  <Card key={challenge.id}>
-                    {console.log(challenge)}
-                    <CardContent>
-                      <pre>{JSON.stringify(challenge, null, 2)}</pre>
-                    </CardContent>
-                  </Card>
+                  <RouterLink to={`/challenges/${challenge.id}`}>
+                    <Card key={challenge.id}>
+                      {console.log(challenge)}
+                      <CardContent>
+                        <pre>{JSON.stringify(challenge, null, 2)}</pre>
+                      </CardContent>
+                    </Card>
+                  </RouterLink>
                 )
             )
           }

@@ -11,6 +11,7 @@ import firebaseConfig from "./firebaseConfig";
 import firebase from "firebase/app";
 import Welcome from "./Welcome";
 import { CircularProgress } from "@material-ui/core";
+import Challenge from "./Challenge";
 
 const App = () => (
   <FirebaseDatabaseProvider {...firebaseConfig} firebase={firebase}>
@@ -19,19 +20,25 @@ const App = () => (
         {({ user, providerId }) =>
           providerId ? (
             <BrowserRouter>
-              <Switch>
-                {user && (
-                  <Route path="/">
+              {user && (
+                <Switch>
+                  <Route exact path="/">
                     <Welcome user={user} />
                   </Route>
-                )}
-                {!user && (
+                  <Route path="/challenges/:id">
+                    <Challenge />
+                  </Route>
+                  <Redirect to="/" />
+                </Switch>
+              )}
+              {!user && (
+                <Switch>
                   <Route path="/login">
                     <Login />
                   </Route>
-                )}
-                <Redirect to={user ? "/" : "/login"} />
-              </Switch>
+                  <Redirect to="/login" />
+                </Switch>
+              )}
             </BrowserRouter>
           ) : (
             <CircularProgress />
