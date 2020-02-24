@@ -9,7 +9,7 @@ import {
 } from "@react-firebase/auth";
 import firebaseConfig from "./firebaseConfig";
 import firebase from "firebase/app";
-import Welcome from "./Welcome";
+import Home from "./Home";
 import { CircularProgress } from "@material-ui/core";
 import Challenge from "./Challenge";
 import Challenges from "./Challenges";
@@ -24,7 +24,7 @@ const App = () => (
               {user && (
                 <Switch>
                   <Route exact path="/">
-                    <Welcome user={user} />
+                    <Home user={user} />
                   </Route>
                   <Route path="/challenges/:id">
                     <Challenge />

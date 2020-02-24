@@ -6,12 +6,13 @@ import {
   // Typography,
   // Link,
   Button,
+  Link,
 } from "@material-ui/core";
 import { FirebaseDatabaseNode } from "@react-firebase/database";
 import { Link as RouterLink } from "react-router-dom";
 import firebase from "firebase/app";
 
-const Welcome = props => (
+const Home = props => (
   <FirebaseDatabaseNode path={`users/${props.user.uid}`}>
     {({ value: userInfo }) => (
       <Container maxWidth="xs">
@@ -24,8 +25,10 @@ const Welcome = props => (
             </pre>
           </CardContent>
         </Card>
-        <div>Link to list of challenges</div>
-        <FirebaseDatabaseNode path="18IbXgkejpKHOdUiMRpvLliMPIqnsBF3_gJH-AHH9ZA8/challenges">
+        <Link component={RouterLink} to="/challenges">
+          List of challenges
+        </Link>
+        {/* <FirebaseDatabaseNode path="18IbXgkejpKHOdUiMRpvLliMPIqnsBF3_gJH-AHH9ZA8/challenges">
           {({ value: challenges }) =>
             challenges &&
             challenges.map(
@@ -43,7 +46,7 @@ const Welcome = props => (
                 )
             )
           }
-        </FirebaseDatabaseNode>
+        </FirebaseDatabaseNode> */}
         <div>Daily challenge</div>
         <div>Total Points</div>
       </Container>
@@ -51,4 +54,4 @@ const Welcome = props => (
   </FirebaseDatabaseNode>
 );
 
-export default Welcome;
+export default Home;

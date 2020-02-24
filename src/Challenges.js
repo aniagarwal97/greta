@@ -15,13 +15,22 @@ const Challenges = () => (
     {({ value: challenges }) =>
       challenges ? (
         <Container maxWidth="xs">
-          {challenges.map(challenge => (
-            <Card key={challenges.id}>
-              <CardContent>
-                <pre>{JSON.stringify(challenge, null, 2)}</pre>
-              </CardContent>
-            </Card>
-          ))}
+          {challenges.map(
+            challenge =>
+              challenge &&
+              challenge.id && (
+                <RouterLink
+                  to={`/challenges/${challenge.id}`}
+                  key={challenges.id}
+                >
+                  <Card>
+                    <CardContent>
+                      <pre>{JSON.stringify(challenge, null, 2)}</pre>
+                    </CardContent>
+                  </Card>{" "}
+                </RouterLink>
+              )
+          )}
         </Container>
       ) : (
         <CircularProgress />
