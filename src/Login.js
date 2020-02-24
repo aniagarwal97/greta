@@ -1,33 +1,35 @@
 import React from "react";
-import { Container, Card, CardContent, Typography } from "@material-ui/core";
 import {
-  FirebaseDatabaseProvider,
-  FirebaseDatabaseNode,
-} from "@react-firebase/database";
-import firebase from "firebase/app";
-import firebaseConfig from "./firebaseConfig";
-import { Router } from "react-router";
+  Container,
+  Card,
+  CardContent,
+  Typography,
+  Link,
+} from "@material-ui/core";
+import { FirebaseDatabaseNode } from "@react-firebase/database";
+import { Link as RouterLink } from "react-router-dom";
 
 const Login = () => (
-  <FirebaseDatabaseProvider {...firebaseConfig} firebase={firebase}>
-    <Container maxWidth="xs">
-      <FirebaseDatabaseNode path="18IbXgkejpKHOdUiMRpvLliMPIqnsBF3_gJH-AHH9ZA8/User">
-        {({ value: users }) =>
-          users &&
-          users.map(
-            user =>
-              user && (
-                <Card key={user.id}>
-                  <CardContent>
-                    <Typography>{JSON.stringify(user, null, 2)}</Typography>
-                  </CardContent>
-                </Card>
-              )
-          )
-        }
-      </FirebaseDatabaseNode>
-    </Container>
-  </FirebaseDatabaseProvider>
+  <Container maxWidth="xs">
+    <FirebaseDatabaseNode path="18IbXgkejpKHOdUiMRpvLliMPIqnsBF3_gJH-AHH9ZA8/User">
+      {({ value: users }) =>
+        users &&
+        users.map(
+          user =>
+            user && (
+              <Card key={user.id}>
+                <CardContent>
+                  <Typography>{JSON.stringify(user, null, 2)}</Typography>
+                </CardContent>
+              </Card>
+            )
+        )
+      }
+    </FirebaseDatabaseNode>
+    <Link component={RouterLink} to="/signup">
+      I don't have an account
+    </Link>
+  </Container>
 );
 
 export default Login;
