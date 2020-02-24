@@ -1,4 +1,5 @@
 import "firebase/database";
+import "firebase/auth";
 
 export default {
   apiKey: "AIzaSyBWAixLNeBHS4eL8gFh9mMrIN0XPZSUKjI",
@@ -8,5 +9,5 @@ export default {
   storageBucket: "greta-challenge.appspot.com",
   messagingSenderId: "1044229263691",
   appId: "1:1044229263691:web:b142b4f43d48854d0f18ce",
-  measurementId: "G-5Y702RCELW"
+  measurementId: "G-5Y702RCELW",
 };
