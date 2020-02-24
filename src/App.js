@@ -12,6 +12,7 @@ import firebase from "firebase/app";
 import Welcome from "./Welcome";
 import { CircularProgress } from "@material-ui/core";
 import Challenge from "./Challenge";
+import Challenges from "./Challenges";
 
 const App = () => (
   <FirebaseDatabaseProvider {...firebaseConfig} firebase={firebase}>
@@ -27,6 +28,9 @@ const App = () => (
                   </Route>
                   <Route path="/challenges/:id">
                     <Challenge />
+                  </Route>
+                  <Route path="/challenges/">
+                    <Challenges />
                   </Route>
                   <Redirect to="/" />
                 </Switch>
