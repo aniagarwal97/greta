@@ -1,38 +1,33 @@
 import React from "react";
 import { Container, Card, CardContent, Typography } from "@material-ui/core";
 import {
-  useFirebase,
-  useFirebaseConnect,
-  isLoaded,
-  isEmpty
-} from "react-redux-firebase";
-import { useSelector } from "react-redux";
+  FirebaseDatabaseProvider,
+  FirebaseDatabaseNode
+} from "@react-firebase/database";
+import firebase from "firebase/app";
+import firebaseConfig from "./firebaseConfig";
 
 const App = () => {
-  // const firebase = useFirebase();
-  useFirebaseConnect(["2F18IbXgkejpKHOdUiMRpvLliMPIqnsBF3_gJH"]);
-  useSelector(state => {
-    console.log(state);
-  });
-
-  // console.log(isLoaded(users), isEmpty(users), users);
-
   return (
-    <Container maxWidth="xs">
-      <Card>
-        <CardContent>
-          <Typography>
-            <a
-              href="https://material-ui.com/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Material UI Documentation
-            </a>
-          </Typography>
-        </CardContent>
-      </Card>
-    </Container>
+    <FirebaseDatabaseProvider {...firebaseConfig} firebase={firebase}>
+      <Container maxWidth="xs">
+        <FirebaseDatabaseNode path="18IbXgkejpKHOdUiMRpvLliMPIqnsBF3_gJH-AHH9ZA8/User">
+          {({ value: users }) =>
+            users &&
+            users.map(
+              user =>
+                user && (
+                  <Card key={user.id}>
+                    <CardContent>
+                      <Typography>{JSON.stringify(user, null, 2)}</Typography>
+                    </CardContent>
+                  </Card>
+                )
+            )
+          }
+        </FirebaseDatabaseNode>
+      </Container>
+    </FirebaseDatabaseProvider>
   );
 };
 export default App;
