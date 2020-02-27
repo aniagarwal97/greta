@@ -1,0 +1,159 @@
+.challnege-name-left-btn {
+  display: flex;
+}
+
+.arrow-left-btn {
+  width: 27px;
+  height: 20px;
+  margin-top: 25px;
+}
+
+.challenges-name {
+  width: 182px;
+  color: #3d9fce;
+  font-weight: 600;
+  font-size: 24px;
+  padding-left: 60px;
+}
+
+.challenge-image-info {
+  display: flex;
+  justify-content: space-between;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 10px;
+}
+
+.challenge-descr {
+  padding-left: 10px;
+}
+
+.challenge-list {
+  background-color: #55c19e17;
+  margin-top: 10px;
+  height: 280px;
+  border-radius: 5px;
+}
+
+.challenge-user-profile-image {
+  border-radius: 50%;
+  width: 46px;
+  height: 42px;
+  margin-top: 38px;
+  margin-left: 10px;
+}
+
+.challenge-user-profile-image-points-earn {
+  display: flex;
+  flex-direction: row;
+}
+
+.challenge-points-message {
+  margin-top: 40px;
+  padding-left: 36px;
+  font-size: 23px;
+  font-weight: bold;
+  color: black;
+}
+
+.recyable-points {
+  display: flex;
+  justify-content: space-between;
+}
+
+.challenge-points {
+  color: #ffa500bd;
+}
+
+.points-earn {
+  color: white;
+  border-color: rgba(73, 236, 183, 0.8);
+  background-color: rgba(73, 236, 183, 0.8);
+  border-radius: 5px;
+  width: 76px;
+  height: 70px;
+  text-align: center;
+  font-size: 16px;
+  margin-top: 32px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.poubelle-recyable {
+  display: flex;
+  flex-direction: column;
+  font-size: 17px;
+  font-weight: 600;
+  color: #55c19e;
+  width: 173px;
+  line-height: 23px;
+}
+
+.challenge-info {
+  font-size: 14px;
+  color: #55c19e;
+  font-weight: normal;
+}
+
+.parti {
+  background-color: #f5f06675;
+  border-radius: 4px;
+  width: 379px;
+  height: 48px;
+  text-align: center;
+  padding-top: 21px;
+  color: #ffa500b8;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.challenge-recyable-message {
+  color: #55c19e;
+  font-weight: 600;
+  font-size: 17px;
+  width: 251px;
+  height: 60px;
+  padding-top: 10px;
+}
+
+.mission {
+  color: #55c19e;
+  font-weight: 600;
+  font-size: 17px;
+}
+
+.mission-message {
+  font-style: italic;
+}
+
+.challenge-notification {
+  width: 120px;
+  height: 22px;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 17px;
+  color: #3d9fce;
+}
+
+.challenge-icon {
+  display: flex;
+}
+
+.challenge-image {
+  background-color: #fc9f5b66;
+  margin-right: 10px;
+  margin-top: 8px;
+  border-radius: 8px;
+}
+
+.number-of-challenge {
+  background-color: #ece4b77d;
+  margin-top: 8px;
+  border-radius: 8px;
+  width: 100px;
+  height: 75px;
+  font-size: 30px;
+  text-align: center;
+  color: #0e3b36;
+}

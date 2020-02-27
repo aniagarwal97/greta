@@ -3,12 +3,12 @@
   flex-direction: row;
 }
 
-#user-name {
+.user-name {
   color: #6895ce;
   font-size: 30px;
 }
 
-#user-photo {
+.user-photo {
   border-radius: 50%;
   width: 80px;
   height: 70px;
@@ -16,12 +16,12 @@
   margin-top: 12px;
 }
 
-#user-quote {
+.user-quote {
   color: #008000a1;
   font-size: 20px;
 }
 
-#emoji {
+.emoji {
   width: 25px;
   height: 20px;
 }
@@ -36,7 +36,7 @@
   border-radius: 5px;
 }
 
-#challenge-score {
+.challenge-score {
   color: #ffa500bd;
 }
 
@@ -80,7 +80,7 @@
   margin-left: 29px;
 }
 
-#challenges-item-btn1 {
+.challenges-item-btn1 {
   background-color: yellow;
   border: yellow;
   width: 140px;
@@ -90,7 +90,7 @@
   opacity: 0.7;
 }
 
-#challenges-item-btn2 {
+.challenges-item-btn2 {
   background-color: yellow;
   border: yellow;
   width: 140px;
@@ -100,7 +100,7 @@
   opacity: 0.7;
 }
 
-#daily-challenges-pionts {
+.daily-challenges-pionts {
   background-color: #33ce71bd;
   border: #33ce71bd;
   color: white;
@@ -119,7 +119,7 @@
   margin-top: 10px;
 }
 
-#challenges-points-earn-message {
+.challenges-points-earn-message {
   padding: 10px;
   font-size: 20px;
   color: #2aad6a7a;
