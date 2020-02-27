@@ -3,17 +3,17 @@
   justify-content: space-around;
 }
 
-#challenge-start-message {
+.challenge-start-message {
   color: #008000a1;
 }
 
-#user-image {
+.user-image {
   border-radius: 50%;
   width: 80px;
   height: 70px;
 }
 
-#list-of-challenges {
+.list-of-challenges {
   color: #6895ce;
   font-size: 40px;
   font-weight: 600;
@@ -33,13 +33,50 @@
 }
 
 .challenges-list {
-  background-color: #ffa5005e;
+  background-color: #ffa50030;
   margin-top: 10px;
   height: 152px;
-  border-radius: 3px;
-  background-image: url("./asset/challenge-Image/carrot.png");
+  border-radius: 5px;
+  background-image: url("./asset/challenge-Image/carrots.png");
+  background-size: 10px;
+  background-size: 389px 202px;
+  /* opacity: 0.8; */
 }
 
-#challenges-info {
-  color: #67008085;
+.challenges-info {
+  color: #b58383;
+}
+
+.challenge-name {
+  color: #b5838d;
+  padding: 8px;
+}
+
+.user-profile-image {
+  border-radius: 50%;
+  width: 46px;
+  height: 42px;
+  margin-top: 38px;
+  margin-left: 10px;
+}
+
+.user-profile-image-points-earn {
+  display: flex;
+  flex-direction: row;
+}
+
+.challenges-points-message {
+  margin-top: 40px;
+  padding-left: 36px;
+  font-size: 23px;
+  font-weight: bold;
+  color: #000000b8;
+}
+
+.challenges-points {
+  color: #ffa500bd;
+}
+
+.link-challenges {
+  text-decoration: none;
 }
