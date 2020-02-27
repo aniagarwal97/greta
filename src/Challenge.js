@@ -5,7 +5,7 @@ import {
   CardContent,
   Typography,
   Link,
-  CircularProgress,
+  CircularProgress
 } from "@material-ui/core";
 import { FirebaseDatabaseNode } from "@react-firebase/database";
 import { Link as RouterLink, withRouter } from "react-router-dom";
@@ -25,12 +25,13 @@ const Challenge = props => (
           <Typography>{value.level}</Typography>
           <Typography>{value.mission}</Typography>
           <Typography>{value.duration}</Typography>
-          {/* <div>Challenge image</div>
+          {/*           
+          <div>Challenge image</div>
         <div>Total users</div>
         <div>Description</div>
         <div>Points</div>
         <div>Start challenge button</div>
-        <div>Links to other challenges</div> */}
+        <div>Links to other challenges</div>  */}
         </Container>
       ) : (
         <CircularProgress />
