@@ -8,7 +8,7 @@ import {
   Button,
   CssBaseline,
   Avatar,
-  TextField,
+  TextField
 } from "@material-ui/core";
 
 import { makeStyles } from "@material-ui/core/styles";
@@ -19,19 +19,19 @@ const useStyles = makeStyles(theme => ({
     marginTop: theme.spacing(8),
     display: "flex",
     flexDirection: "column",
-    alignItems: "center",
+    alignItems: "center"
   },
   avatar: {
     margin: theme.spacing(1),
-    backgroundColor: theme.palette.secondary.main,
+    backgroundColor: theme.palette.secondary.main
   },
   form: {
     width: "100%", // Fix IE 11 issue.
-    marginTop: theme.spacing(1),
+    marginTop: theme.spacing(1)
   },
   button: {
-    margin: theme.spacing(2, 0, 2),
-  },
+    margin: theme.spacing(2, 0, 2)
+  }
 }));
 
 const Signup = () => {
@@ -108,7 +108,7 @@ const Signup = () => {
             onClick={async () => {
               if (signup) {
                 const {
-                  user,
+                  user
                 } = await firebase
                   .auth()
                   .createUserWithEmailAndPassword(email, password);
@@ -116,7 +116,6 @@ const Signup = () => {
                   .database()
                   .ref(`users/${user.uid}`)
                   .set({ name, postcode });
-                console.log(user);
               } else {
                 await firebase
                   .auth()

@@ -4,14 +4,14 @@
 }
 
 .user-name {
-  color: #6895ce;
+  color: #3d9fce;
   font-size: 30px;
 }
 
 .user-photo {
   border-radius: 50%;
-  width: 80px;
-  height: 70px;
+  width: 60px;
+  height: 55px;
   margin-left: 17px;
   margin-top: 12px;
 }
@@ -27,13 +27,14 @@
 }
 
 .challenge-met {
-  background-color: #76e07614;
+  background-color: #bbe1c345;
   height: 35px;
   font-size: 20px;
   padding: 10px 0px 0px 10px;
   font-weight: 600;
   color: #4682b4d9;
   border-radius: 5px;
+  opacity: 0.8;
 }
 
 .challenge-score {
@@ -42,7 +43,7 @@
 
 .challenge-quote {
   color: #ffa500bd;
-  background-color: #ffff001f;
+  background-color: #ffff0014;
   height: 45px;
   font-size: 20px;
   font-weight: 600;
@@ -53,35 +54,38 @@
 }
 
 .challenge-message {
-  color: #00800082;
+  color: #55c19e;
   font-weight: bold;
   height: 45px;
 }
 
 .challenges {
   display: flex;
-  /* justify-content: space-around; */
+  margin-top: 20px;
 }
 
 .challenges-item1 {
-  background-color: #ffa5005e;
-  height: 220px;
+  /* background-color: #ffa5005e; */
+  height: 290px;
   width: 170px;
   border-radius: 8px;
-  background-image: url("./asset/challenge-Image/tree.png");
+  background: url("./asset/challenge-Image/ploybeg.png") #ffa5005e center center
+    no-repeat;
 }
 
 .challenges-item2 {
-  background-color: #ffa5005e;
-  height: 220px;
+  /* background-color: #ffa5005e; */
+  height: 290px;
   width: 170px;
   border-radius: 8px;
-  background-image: url("./asset/challenge-Image/tree.png");
+  background: url("./asset/challenge-Image/ped.png") #ffa5005e center center
+    no-repeat;
   margin-left: 29px;
 }
 
 .challenges-item-btn1 {
   background-color: yellow;
+  color: #55c19e;
   border: yellow;
   width: 140px;
   height: 40px;
@@ -92,6 +96,7 @@
 
 .challenges-item-btn2 {
   background-color: yellow;
+  color: #55c19e;
   border: yellow;
   width: 140px;
   height: 40px;
@@ -101,27 +106,27 @@
 }
 
 .daily-challenges-pionts {
-  background-color: #33ce71bd;
-  border: #33ce71bd;
+  background-color: rgba(73, 236, 183, 0.8);
+  border: rgba(73, 236, 183, 0.8);
   color: white;
   text-align: center;
   border-radius: 5px;
   width: 371px;
   height: 42px;
   font-size: 19px;
-  margin-top: 10px;
+  margin-top: 20px;
 }
 
 .challenges-points-earn {
-  background-color: #deb88759;
+  background-color: #ece4b76e;
   border-radius: 5px;
   height: 94px;
-  margin-top: 10px;
+  margin-top: 20px;
 }
 
 .challenges-points-earn-message {
   padding: 10px;
   font-size: 20px;
-  color: #2aad6a7a;
+  color: #7dcfb6;
   font-weight: bold;
 }

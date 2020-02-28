@@ -19,30 +19,20 @@ const Challenge = props => (
     {({ value }) =>
       value ? (
         <Container maxWidth="xs">
-          {/* {console.log(value)}
-          <Typography>{value.name}</Typography>
-          <Typography>{value.shortDescription}</Typography>
-          <Typography>{value.longDescription}</Typography>
-          <Typography>{value.theme}</Typography>
-          <Typography>{value.level}</Typography>
-          <Typography>{value.mission}</Typography>
-          <Typography>{value.duration}</Typography>
-          {/*           
-          <div>Challenge image</div>
-        <div>Total users</div>
-        <div>Description</div>
-        <div>Points</div>
-        <div>Start challenge button</div>
-        <div>Links to other challenges</div>  */}
           <div className="challnege-name-left-btn">
-            <img
-              className="arrow-left-btn"
-              src={require("./asset/emoji/left-arrow.png")}
-              alt="UserProfileImage"
-            />
+            <RouterLink className="link-challenges" to={`/challenges`}>
+              <img
+                className="arrow-left-btn"
+                src={require("./asset/emoji/left-arrow.png")}
+                alt="UserProfileImage"
+              />
+            </RouterLink>
             <h3 className="challenges-name">
-              Name Challenge{" "}
-              <span className="challenge-descr">- Short Descr</span>
+              {value.name}
+              <span className="challenge-descr">
+                {" "}
+                - {value.shortDescription}
+              </span>
             </h3>
           </div>
           <div className="challenge-list">
@@ -66,22 +56,22 @@ const Challenge = props => (
             <div className="challenge-user-profile-image-points-earn">
               <img
                 className="challenge-user-profile-image"
-                src={require("./asset/User-Profile-Image/Donald_Trump.jpg")}
+                src={require("./asset/User-Profile-Image/image 1.png")}
                 alt="UserProfileImage"
               />
               <img
                 className="challenge-user-profile-image"
-                src={require("./asset/User-Profile-Image/Donald_Trump.jpg")}
+                src={require("./asset/User-Profile-Image/image 2.png")}
                 alt="UserProfileImage"
               />
               <img
                 className="challenge-user-profile-image"
-                src={require("./asset/User-Profile-Image/Donald_Trump.jpg")}
+                src={require("./asset/User-Profile-Image/image 3.png")}
                 alt="UserProfileImage"
               />
               <img
                 className="challenge-user-profile-image"
-                src={require("./asset/User-Profile-Image/Donald_Trump.jpg")}
+                src={require("./asset/User-Profile-Image/image 4.png")}
                 alt="UserProfileImage"
               />
               <div className="challenge-points-message">
@@ -91,16 +81,16 @@ const Challenge = props => (
           </div>
           <div className="recyable-points">
             <h5 className="poubelle-recyable">
-              Poubelle recycable EST long-descr{" "}
+              {value.longDescription}
               <span className="challenge-info">Plus d'infos</span>{" "}
             </h5>
             <div className="points-earn">
-              <span className="points">Points 7</span>
+              <span className="points">Points {value.points}</span>
             </div>
           </div>
           <div className="parti">Et c'est parti !</div>
           <div className="challenge-recyable-message">
-            <span className="mission">MISSION :</span> recyable EST VIDE{" "}
+            <span className="mission">MISSION :</span> {value.mission}
             <span className="mission-message">
               Le principe ? Pas de dechets :)
             </span>{" "}
@@ -108,21 +98,24 @@ const Challenge = props => (
           </div>
           <span className="challenge-info">Plus d'infos</span>
           <div className="challenge-recyable-message">
-            <span className="mission">IMPACT :</span> this is an variable in the
-            base : critere-reussite
+            <span className="mission">IMPACT :</span> {value.impact}
           </div>
           <span className="challenge-notification">Plus de défis ?</span>
           <div className="challenge-icon">
-            <img
-              className="challenge-image"
-              src={require("./asset/challenge-Image/carrots.png")}
-              alt="ChallengeImage"
-            />
-            <img
-              className="challenge-image"
-              src={require("./asset/challenge-Image/trees.png")}
-              alt="ChallengeImage"
-            />
+            <RouterLink className="link-challenges" to={`/challenges/1`}>
+              <img
+                className="challenge-image"
+                src={require("./asset/challenge-Image/carrots.png")}
+                alt="ChallengeImage"
+              />
+            </RouterLink>
+            <RouterLink className="link-challenges" to={`/challenges/2`}>
+              <img
+                className="challenge-image"
+                src={require("./asset/challenge-Image/trees.png")}
+                alt="ChallengeImage"
+              />
+            </RouterLink>
             <div className="number-of-challenge">13+</div>
           </div>
         </Container>

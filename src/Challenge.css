@@ -9,7 +9,8 @@
 }
 
 .challenges-name {
-  width: 182px;
+  width: 212px;
+  height: 80px;
   color: #3d9fce;
   font-weight: 600;
   font-size: 24px;
@@ -21,7 +22,7 @@
   justify-content: space-between;
   padding-left: 10px;
   padding-right: 10px;
-  padding-top: 10px;
+  margin-top: 28px;
 }
 
 .challenge-descr {
@@ -51,14 +52,18 @@
 .challenge-points-message {
   margin-top: 40px;
   padding-left: 36px;
-  font-size: 23px;
+  font-size: 15px;
   font-weight: bold;
+  line-height: 20px;
   color: black;
+  height: 40px;
+  left: 70%;
 }
 
 .recyable-points {
   display: flex;
   justify-content: space-between;
+  margin-bottom: 13px;
 }
 
 .challenge-points {
@@ -156,4 +161,7 @@
   font-size: 30px;
   text-align: center;
   color: #0e3b36;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }

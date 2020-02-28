@@ -5,7 +5,7 @@ import { BrowserRouter } from "react-router-dom";
 import { FirebaseDatabaseProvider } from "@react-firebase/database";
 import {
   FirebaseAuthProvider,
-  FirebaseAuthConsumer,
+  FirebaseAuthConsumer
 } from "@react-firebase/auth";
 import firebaseConfig from "./firebaseConfig";
 import firebase from "firebase/app";
@@ -13,6 +13,7 @@ import Home from "./Home";
 import { CircularProgress } from "@material-ui/core";
 import Challenge from "./Challenge";
 import Challenges from "./Challenges";
+import "./App.css";
 
 const App = () => (
   <FirebaseDatabaseProvider {...firebaseConfig} firebase={firebase}>
@@ -30,7 +31,7 @@ const App = () => (
                     <Challenge />
                   </Route>
                   <Route path="/challenges/">
-                    <Challenges />
+                    <Challenges user={user} />
                   </Route>
                   <Redirect to="/" />
                 </Switch>
