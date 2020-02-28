@@ -29,10 +29,18 @@ const Challenge = props => (
             </RouterLink>
             <h3 className="challenges-name" style={{ textAlign: "center" }}>
               <span>{value.name}</span>
-              <span className="challenge-descr">
+              <div className="challenge-descr" style={{ fontSize: 15 }}>
                 - {value.shortDescription}
-              </span>
+              </div>
             </h3>
+            <RouterLink to={`/`}>
+              <img
+                className="user-image"
+                style={{ marginTop: 25 }}
+                src={require("./asset/User-Profile-Image/user1.png")}
+                alt="UserImage"
+              ></img>
+            </RouterLink>
           </div>
           <div className="challenge-list">
             <div className="challenge-image-info">
@@ -105,7 +113,7 @@ const Challenge = props => (
           </div>
           <span className="challenge-info">Plus d'infos</span>
           <div className="challenge-recyable-message">
-            <span className="mission">IMPACT :</span>{" "}
+            <span className="mission">IMPACT :</span>
             <span>{value.impact}</span>
           </div>
           <span className="challenge-notification">Plus de défis ?</span>
