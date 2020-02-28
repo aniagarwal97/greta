@@ -27,10 +27,9 @@ const Challenge = props => (
                 alt="UserProfileImage"
               />
             </RouterLink>
-            <h3 className="challenges-name">
-              {value.name}
+            <h3 className="challenges-name" style={{ textAlign: "center" }}>
+              <span>{value.name}</span>
               <span className="challenge-descr">
-                {" "}
                 - {value.shortDescription}
               </span>
             </h3>
@@ -81,8 +80,16 @@ const Challenge = props => (
           </div>
           <div className="recyable-points">
             <h5 className="poubelle-recyable">
-              {value.longDescription}
-              <span className="challenge-info">Plus d'infos</span>{" "}
+              <div
+                style={{
+                  overflow: "hidden",
+                  textOverflow: "ellipsis",
+                  whiteSpace: "nowrap"
+                }}
+              >
+                {value.longDescription}
+              </div>
+              <span className="challenge-info">Plus d'infos</span>
             </h5>
             <div className="points-earn">
               <span className="points">Points {value.points}</span>
@@ -93,12 +100,13 @@ const Challenge = props => (
             <span className="mission">MISSION :</span> {value.mission}
             <span className="mission-message">
               Le principe ? Pas de dechets :)
-            </span>{" "}
+            </span>
             long-descr
           </div>
           <span className="challenge-info">Plus d'infos</span>
           <div className="challenge-recyable-message">
-            <span className="mission">IMPACT :</span> {value.impact}
+            <span className="mission">IMPACT :</span>{" "}
+            <span>{value.impact}</span>
           </div>
           <span className="challenge-notification">Plus de défis ?</span>
           <div className="challenge-icon">
@@ -116,7 +124,9 @@ const Challenge = props => (
                 alt="ChallengeImage"
               />
             </RouterLink>
-            <div className="number-of-challenge">13+</div>
+            <RouterLink className="link-challenges" to={`/challenges`}>
+              <div className="number-of-challenge">13+</div>
+            </RouterLink>
           </div>
         </Container>
       ) : (

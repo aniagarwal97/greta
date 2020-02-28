@@ -9,12 +9,9 @@
 }
 
 .challenges-name {
-  width: 212px;
-  height: 80px;
   color: #3d9fce;
   font-weight: 600;
   font-size: 24px;
-  padding-left: 60px;
 }
 
 .challenge-image-info {
@@ -117,8 +114,6 @@
   color: #55c19e;
   font-weight: 600;
   font-size: 17px;
-  width: 251px;
-  height: 60px;
   padding-top: 10px;
 }
 

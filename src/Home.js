@@ -24,19 +24,19 @@ const Home = props => (
             <div className="user-details-item">
               <h2 className="user-name">Salut {userInfo.name},</h2>
               <p className="user-quote">
-                Prêt à sauver des ornag-outangs{" "}
+                Prêt à sauver des orang-outangs
                 <img
                   className="emoji"
                   src={require("./asset/emoji/Monkey.png")}
                   alt="UserImage"
-                />{" "}
+                />
                 ?
               </p>
             </div>
             <div>
               <img
                 className="user-photo"
-                src={require("./asset/User-Profile-Image/trump.png")}
+                src={require("./asset/User-Profile-Image/user1.png")}
                 alt="UserImage"
               ></img>
             </div>

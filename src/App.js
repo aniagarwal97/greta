@@ -13,6 +13,7 @@ import Home from "./Home";
 import { CircularProgress } from "@material-ui/core";
 import Challenge from "./Challenge";
 import Challenges from "./Challenges";
+import Result from "./Result";
 import "./App.css";
 
 const App = () => (
@@ -32,6 +33,9 @@ const App = () => (
                   </Route>
                   <Route path="/challenges/">
                     <Challenges user={user} />
+                  </Route>
+                  <Route path="/result/">
+                    <Result user={user} />
                   </Route>
                   <Redirect to="/" />
                 </Switch>

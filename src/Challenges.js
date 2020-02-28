@@ -18,11 +18,13 @@ const Challenges = props => (
             <h2 className="challenge-start-message">
               Aller {userInfo.name}, on se lance?
             </h2>
-            <img
-              className="user-image"
-              src={require("./asset/User-Profile-Image/trump.png")}
-              alt="UserImage"
-            ></img>
+            <RouterLink to={`/`}>
+              <img
+                className="user-image"
+                src={require("./asset/User-Profile-Image/user1.png")}
+                alt="UserImage"
+              ></img>
+            </RouterLink>
           </div>
         ) : (
           <CircularProgress />
