@@ -22,7 +22,7 @@ const Home = props => (
           <div className="user-details-item">
             <h2 className="user-name">Salut Donald,</h2>
             <p className="user-quote">
-              Prêt à sauver des ornag-outangs{" "}
+              Prêt à sauver des orang-outangs{" "}
               <img
                 className="emoji"
                 src={require("./asset/emoji/Monkey.png")}
